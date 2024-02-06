@@ -1,0 +1,109 @@
+\documentclass[11 pt]{article}%
+\usepackage{amssymb, amsmath, fullpage}%
+
+\pagestyle{empty}
+\lineskip +3pt
+
+\usepackage{tikz}
+
+\pgfdeclarelayer{edgelayer}
+\pgfdeclarelayer{nodelayer}
+\pgfsetlayers{edgelayer,nodelayer,main}
+
+\tikzstyle{none}=[inner sep=0pt]
+\definecolor{hexcolor0xf81e1c}{rgb}{0.973,0.118,0.110}
+\definecolor{hexcolor0x3c00ff}{rgb}{0.235,0.000,1.000}
+
+\tikzstyle{whitevertex}=[circle, ,fill=white,draw=black]
+\tikzstyle{setcirc}=[circle, ,fill=none,draw=black, scale=11]
+\tikzstyle{textbox}=[rectangle, fill=none, draw=none]
+
+\tikzstyle{undirected}=[draw=black]
+
+
+
+
+\begin{document}
+
+
+
+\begin{center}
+\textbf{{\Large 202201 Math 122 Assignment 3}}
+\end{center}
+
+\medskip\noindent\textbf{Due:  Sunday, March 6, 2022 at 23:59}.  Please submit on your section's Crowdmark page.
+
+\bigskip\hrule\medskip\noindent There are five questions of equal value (worth a total of 45 marks), plus a left over question from Assignment 2 (worth 9 marks).   There are 4 bonus marks available if the solutions are typeset with \LaTeX.  Information on obtaining and using \LaTeX is available on the cross-listed Brightspace page.
+
+\medskip\noindent
+Please feel free to discuss these problems with each other.  
+You may not  access  any ``tutoring'' or ``help'' website in any way. 
+In the end, each person must write up their own solution, in their own words, in a way that reflects their own understanding.   Complete solutions are those which are coherently written, and include appropriate justifications.
+
+
+\medskip\hrule
+
+
+\begin{enumerate}
+
+\item[$\ast$]  (Assignment 2, Question 5)  Answer each question True or False, and write a sentence or two to briefly explain your reasoning.
+Let $A = \{1, \{1\}, 2,   \{\emptyset\}, \{ \{1\}, \{2\}\}, \{\{1\},2\}\}$.  
+
+\begin{enumerate}
+\item $\{2\} \in A$
+\item $\{1,2\} \subsetneqq A$ 
+\item $\{\{1, \{2\}\}\} \subseteq A$
+\item $\emptyset \in A$
+\item $A \cap \mathcal{P}(A) = \emptyset$
+\item $\{2\} \in \mathcal{P}(A)$
+\item $\emptyset$ is the only set with no non-empty proper subset.
+\end{enumerate}
+
+\item Prove that for all sets $A, B$ and $C$, 
+$A \setminus (B \cup C) = (A \setminus B) \cap (A \setminus C)$ by:
+\begin{enumerate}
+\item using set-builder notation and showing the LHS and RHS are defined by logically equivalent expressions (give reasons for each step);
+\item using the Laws of Set Theory  (give reasons for each step);
+\end{enumerate}
+
+\item Let $A$ and $B$ be sets.
+\begin{enumerate}
+\item Prove that if $A \subseteq B$, then $A \setminus B = \emptyset$.
+\item Prove that if $A \setminus B = \emptyset$, then $A \cup B = B$.
+\item Prove that if $A \cup B = B$, then $A \subseteq B$.
+\item Are the three statements (i) $A \subseteq B$, (ii) $A \setminus B = \emptyset$, and (iii) $A \cup B = B$
+all logically equivalent?  Explain your reasoning.
+\end{enumerate}
+
+
+\item Let $A$ and $B$ be sets.  Use the same method as in 2. to show that the three statements 
+(a) $A = B$,
+(b) $A \cup B = A \cap B$, and 
+(c) $A \oplus B = \emptyset$
+are all logically equivalent.
+
+%Show that the statements (a), (b), (c) below are all logically equivalent.
+%\begin{enumerate}
+%\item If $A = B$, then $A \cup B = A$,
+%\item  If $A \cup B = A \cap B$ then $A \oplus B = \emptyset$.
+%\item  If $A \oplus B = \emptyset$, then $A = B$. 
+%\end{enumerate}
+
+\newpage
+\item   Let $A, B, C$ be sets.  
+In each part, if the given statement is true then prove it, and it it is false then give a counterexample. 
+In the case that the statement is false and a Venn diagram suggests that one of the sets is a subset of the other, state the relationship that's suggested.
+\begin{enumerate}
+\item   For all sets $A, B, C$, $(A \setminus B) \setminus C = A \setminus (B \setminus C)$.
+\item For all sets $A, B, C$,  $(A \oplus B^c) \oplus C =  A \oplus (B^c \oplus C)$.
+\end{enumerate}
+
+\item Let $A_1, A_2, A_3, A_4$ be sets.  
+\begin{enumerate}
+\item Give a definition of $A_1 \cup A_2 \cup A_3 \cup A_4$ and  $A_1 \cap A_2 \cap A_3 \cap A_4$.
+\item Prove that $(A_1 \cup A_2 \cup A_3 \cup A_4)^c = A_1^c \cap A_2^c \cap A_3^c \cap A_4^c$.
+\item Write down the dual of the statement in (b).  No proof is required.
+\end{enumerate}
+
+\end{enumerate}
+\end{document}

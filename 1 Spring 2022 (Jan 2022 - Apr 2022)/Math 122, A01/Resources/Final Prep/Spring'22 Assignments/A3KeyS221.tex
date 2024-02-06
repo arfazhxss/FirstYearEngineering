@@ -1,0 +1,169 @@
+\documentclass[12 pt]{article}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{fullpage}
+\pagestyle{empty}
+\parindent 0pt
+\parskip 7pt
+
+\begin{document}
+{\bf Math 122 Assignment 3 Solution Ideas}
+\begin{enumerate}
+
+\item  [*] (Assignment 2, Question 5)\begin{enumerate}
+\item False.  The elements of $A$ are $1, \{1\}, 2,   \{\emptyset\}, \{ \{1\}, \{2\}\}, \{\{1\},2\}$, and $\{2\}$ isn't one of these.
+\item True.  Both 1 and 2 are elements of $A$, and $A \neq \{1, 2\}$.
+\item False.  As in (a), $\{1, \{2\}\}$ is not an element of $A$,
+\item False.  Similar reason as in (a).
+\item False.  Both $\{1\} \subseteq A$ and $\{1\} \in A$, so $\{1\} \in A \cap \mathcal{P}(A)$.
+\item True.  $\{2\} \subseteqq A$.
+\item False. $\{1\}$ has no non-empty proper subset.
+\end{enumerate}
+
+
+\item \begin{enumerate}
+\item $ $\\
+$\begin{array}{rcl}
+
+A \setminus (B \cup C) &=& \{x: (x \in A) \wedge (x \not\in B \cup C)\}\\
+&=& \{x: (x \in A) \wedge \neg (x \in B \cup C)\}\\
+&& \quad\quad \mbox{ Definition}\\
+&=&  \{x: ((x \in A) \wedge (x \in A)) \wedge ((x \in B^c) \wedge (x \in C^c)\}\\
+&& \quad\quad \mbox{ DeMorgan}, \mbox{Conj. Idemp.}\\
+&=& \{x: ((x \in A) \wedge (x \in B^c)) \wedge ((x \in A) \wedge (x \in C^c))\}\\
+&& \quad\quad\mbox{Associative and Commutative (several times)}\\
+&=& \{x: (x \in A \cap B^c) \wedge (x \in A \cap C^c)\} \\
+&& \quad\quad\mbox{Definition}\\
+&=& \{x: x \in (A \setminus B) \cap (A \setminus C)\} \\
+&& \quad\quad \mbox{ Definition}\\
+ &=& (A \setminus B) \cap (A \setminus C)
+ \end{array}$
+ 
+ \item
+$ $\\
+$\begin{array}{rcll}
+A \setminus (B \cup C) &=& A \cap (B \cup C)^c & \mbox{known}\\
+&=& (A \cap A) \cap (B^c \cap C^c) & \mbox{Idempotent}\\
+&=& (A \cap B^c) \cap (A \cap C^c) & \mbox{Associative and Commutative (several times)}\\
+&=& (A \setminus B) \cap (A \setminus C) & \mbox{known}
+\end{array}$
+\end{enumerate}
+
+\item \begin{enumerate}
+\item 
+We prove the contrapositive: if $A \setminus B \neq \emptyset$, then $A \not\subseteq B$.
+Suppose $A \setminus B \neq \emptyset$.
+Then, by definition, there exists an element of $A$ which is not in $B$.
+Thus $A \not\subseteq B$.
+Hence if $A \subseteq B$, then $A \setminus B = \emptyset$.
+ 
+ \item  Suppose $A \setminus B = \emptyset$.
+ Since $B \subseteq A \cup B$ by definition, it suffices to show that $A \cup B \subseteq B$.
+ Take any $x \in A \cup B$.
+ Then $x \in A$ or $x \in B$.
+ If $x \in B$ there is nothing to show.
+ If $x \in A$ then,  since $A \setminus B = \emptyset$, we have $x \in B$.
+ In either case $x \in B$.
+ Thus $A \cup B \subseteq B$ and hence $A \cup B = B$.
+ 
+ \item Suppose $A \cup B = B$.
+ Take any $x \in A$.
+ Then $x \in A \cup B$ by definition of union.
+ Since $A \cup B = B$, we have $x \in B$.
+ Therefore $A \subseteq B$.
+ 
+ \item Yes.  In parts (a), (b), (c) above we have shown (i) $\Rightarrow$ (ii),  (ii) $\Rightarrow$ (iii), and (iii) $\Rightarrow$ (i).
+ The three statements are then logically equivalent by Assignment 1, Question 3.
+ \end{enumerate}
+ 
+ \item\begin{enumerate}
+ \item We need to show (a) $\Rightarrow$ (b), (b) $\Rightarrow$ (c), and (c) $\Rightarrow$ (a).
+ 
+ \smallskip
+(a) $\Rightarrow$ (b). Suppose $A = B$.  Then $A \cup B = A \cup A = A = A \cap A = A \cap B$.
+
+\smallskip
+(b) $\Rightarrow$ (c). We prove the contrapositive: If $A \oplus B \neq \emptyset$ then $A \cup B \neq A \cap B$.
+Suppose $A \oplus B \neq \emptyset$.
+Then there exists $x \in A$ such that $x \not\in B$, or there exists $x \in B$ such that $x \not\in A$.
+In either case, the element $x$ belongs to $A \cup B$ but not to $A \cap B$.
+Thus  $A \cup B \neq A \cap B$.
+Hence if $A \cup B = A \cap B$, then $A \oplus B = \emptyset$.
+
+\smallskip
+(c) $\Rightarrow$ (a).
+We prove the contrapositive: if $A \neq B$ then $A \oplus B \neq \emptyset$.
+Suppose $A \neq B$.
+Then either there exists $x \in A$ such that $x \not\in B$, or there exists $x \in B$ such that $x \not\in A$.
+In either case, $x \in A \oplus B$, so $A \oplus B \neq \emptyset$.
+Hence if $A \oplus B = \emptyset$, then $A = B$.
+
+\smallskip
+The proof is now complete.
+ \end{enumerate}
+
+\item \begin{enumerate}
+\item It is possible to generate a counterexample from a Venn diagram, as shown in class.  Here is a 
+different one.  Let $A = B = C = \{1\}$.
+Then $A \setminus (B \setminus C) = A \setminus \emptyset = A = \{1\}$, while
+$(A \setminus B) \setminus C = \emptyset \setminus C = \emptyset \neq \{1\}$.
+Thus $A \setminus (B \setminus C)$ is not equal to $(A \setminus B) \setminus C$ for all sets $A, B, C$.
+But the Venn diagram suggests $(A \setminus B) \setminus C$ is a subset of $A \setminus (B \setminus C)$.
+
+\item The two sets are equal. We show 
+LHS $\subseteq$  RHS and RHS $\subseteq$ LHS.
+
+\smallskip
+LHS $\subseteq$  RHS.
+Take any $x \in (A \oplus B^c) \oplus C$.
+Then $x \in A \oplus B^c$ and $x \not\in C$ or $x \not\in A \oplus B^c$ and $x \in C$.
+In the first case $x \not\in C$ and either $x \in A$ and $x \not\in B^c$, or $x \in B^c$ and $x \not\in A$.
+In all cases, $x \in A \oplus (B^c \oplus C)$.
+
+\smallskip
+RHS $\subseteq$ LHS.
+Take any $x \in  A \oplus (B^c \oplus C)$.
+Then $x \in A$ and $x \not\in (B^c \oplus C)$, or  $x \not\in A$ and $x \in (B^c \oplus C)$.
+In the first case, $x \in A, x \in B^c$ and $x \in C$, or $x \in A, x \not\in B^c$ and $x \not\in C$.
+In the second case $x \not\in A, x \in B^c$ and $x \not\in C$, or $x \in A, x \not\in B^c$ and $x \not\in C$.
+In all cases, $x \in (A \oplus B^c) \oplus C$.
+
+Thus $(A \oplus B^c) \oplus C =  A \oplus (B^c \oplus C)$.
+
+ \end{enumerate}
+ 
+ 
+ \item \begin{enumerate}
+ \item Let $A_1, A_2, A_3$ and $A_4$ be sets.  We define
+  $$A_1 \cup A_2 \cup A_3 \cup A_4 = \{x: (x \in A_1) \vee (x \in A_2) \vee (x \in A_3) \vee (x \in A_4\}$$
+  and 
+ $$A_1 \cap A_2 \cap A_3 \cap A_4 = \{x: (x \in A_1) \wedge (x \in A_2) \wedge (x \in A_3) \vee (x \in A_4\}.$$
+ 
+ \item We show LHS $\subseteq$  RHS and RHS $\subseteq$ LHS.
+ 
+ \smallskip
+LHS $\subseteq$  RHS.
+Take any $x \in  (A_1 \cup A_2 \cup A_3 \cup A_4)^c$.
+Then, by definition, $x \not\in A_1$, $x \not\in A_2$, $x \not\in A_3$ and $x \not\in A_4$.
+That is,  $x \in A_1^c$, $x \in A_2^c$, $x \in A_3^c$ and $x \in A_4^c$.
+Therefore, $x \in (A_1^c \cap A_2^c \cap A_3^c \cap A_4^c)$.
+
+\smallskip
+RHS $\subseteq$ LHS.
+Take any $x \in  (A_1^c \cap A_2^c \cap A_3^c \cap A_4^c)$.
+Then, by definition, $x \not\in A_1$, $x \not\in A_2$, $x \not\in A_3$ and $x \not\in A_4$.
+Therefore, $x \not\in (A_1 \cup A_2 \cup A_3 \cup A_4)$.
+Hence $x \in (A_1 \cup A_2 \cup A_3 \cup A_4)^c$.
+
+\smallskip
+Therefore $(A_1 \cup A_2 \cup A_3 \cup A_4)^c = (A_1^c \cap A_2^c \cap A_3^c \cap A_4^c)$.
+
+\item $(A_1 \cap A_2 \cap A_3 \cap A_4)^c = (A_1^c \cup A_2^c \cup A_3^c \cup A_4^c)$.
+
+ \end{enumerate}
+ 
+ 
+\end{enumerate}
+\end{document}

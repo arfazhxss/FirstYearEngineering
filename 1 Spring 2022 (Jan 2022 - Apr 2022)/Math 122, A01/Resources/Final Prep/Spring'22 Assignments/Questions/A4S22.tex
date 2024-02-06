@@ -1,0 +1,79 @@
+\documentclass[11 pt]{article}%
+\usepackage{amssymb, amsmath, fullpage}%
+
+\pagestyle{empty}
+\lineskip +3pt
+
+\usepackage{tikz}
+
+\pgfdeclarelayer{edgelayer}
+\pgfdeclarelayer{nodelayer}
+\pgfsetlayers{edgelayer,nodelayer,main}
+
+\tikzstyle{none}=[inner sep=0pt]
+\definecolor{hexcolor0xf81e1c}{rgb}{0.973,0.118,0.110}
+\definecolor{hexcolor0x3c00ff}{rgb}{0.235,0.000,1.000}
+
+\tikzstyle{whitevertex}=[circle, ,fill=white,draw=black]
+\tikzstyle{setcirc}=[circle, ,fill=none,draw=black, scale=11]
+\tikzstyle{textbox}=[rectangle, fill=none, draw=none]
+
+\tikzstyle{undirected}=[draw=black]
+
+
+
+\begin{document}
+
+\begin{center}
+\textbf{{\Large 202201 Math 122 Assignment 4}}
+\end{center}
+
+\medskip\noindent\textbf{Due:  Friday, March 18, 2022 at 23:59}.  Please submit on your section's Crowdmark page.
+
+\bigskip\hrule\medskip\noindent There are five questions of equal value (worth a total of 45 marks).   There are 4 bonus marks available if the solutions are typeset with \LaTeX.  Information on obtaining and using \LaTeX\ is available on the cross-listed Brightspace page.
+
+\medskip\noindent
+Please feel free to discuss these problems with each other.  
+You may not  access  any ``tutoring'' or ``help'' website in any way. 
+In the end, each person must write up their own solution, in their own words, in a way that reflects their own understanding.   Complete solutions are those which are coherently written, and include appropriate justifications.
+
+
+\medskip\hrule
+
+
+\begin{enumerate}
+\item Let $f_1, f_2, \ldots$ be the sequence of Fibonacci numbers.
+ Suppose $f_n$ is computed by repeatedly applying the defining recurrence.
+ \begin{enumerate}
+\item The number $f_n$ is eventually expressed as $a_n f_2 + b_n f_1$ for some integers $a_n$ and $b_n$.  For example, $f_3 = 1f_2 + 1f_1$, so $a_3 = b_3 = 1$ and $f_4 = f_3 + f_2 = 1f_2 + 1f_1 + f_2 = 2f_2 + f_1$, so $a_4 = 2$ and $b_4 = 1$.  
+
+Give a recursive definition of the sequences $a_3, a_4, \ldots$ and $b_3, b_4, \ldots$.
+What are the numbers $a_n$ and $b_n$ really?
+
+\item Let $c_1, c_2, \ldots$ be the total number of times the defining recurrence is applied in the computation of $f_n$.  
+Then $c_1 = c_2 = 0$, and further computation shows $c_3 = 1, c_4 = 2$ and $c_5 = 4$.  Using the values of $c_1$ and $c_2$ as base cases, give a recursive formula for the number $c_n$ that is valid for all
+$n \geq 1$.
+
+\item Compute $c_7$ using your formula in (b).
+\end{enumerate}
+
+\item  Find, with proof, the smallest positive integer $n_0$ such that $5^n > n^5$ for all $n \geq n_0$.\\
+(Note: $(n+1)^5 = n^5 + 5n^4 + 10n^3 + 10n^2 + 5n + 1$.)
+
+\item  Let $a_0, a_1, \ldots$ be the sequence recursively defined by
+$$a_0 = 6,\ a_1 = -13,\ \text{and}\ a_n = -5a_{n-1} -6a_{n-2}\ \text{for}\ n \geq 2.$$  
+Prove that $a_n = 5(-2)^n + (-3)^n$ for all $n \geq 0$.
+
+\item Let $f_1, f_2, \ldots$ be the sequence of Fibonacci numbers.  
+Prove that $$f_1^2 + f_2^2 + \cdots + f_n^2 = f_{n}f_{n+1}$$ for all integers $n \geq 1$.
+
+\item Let $a, b \in \mathbb{R}$, and let $t_0, t_1, \ldots$ be the sequence recursively defined by
+$t_0 = b$, and $t_n = a \cdot t_{n-1} + b$ for $n \geq 1$.  
+Conjecture a formula (not involving a sum of about $n$ terms)   for $t_n$ that holds for all $n \geq 0$, and then prove that your conjecture is correct.
+
+\end{enumerate}
+
+
+
+
+\end{document}

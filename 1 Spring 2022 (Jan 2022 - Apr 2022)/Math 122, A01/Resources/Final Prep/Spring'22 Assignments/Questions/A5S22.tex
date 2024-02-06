@@ -1,0 +1,93 @@
+\documentclass[11 pt]{article}%
+\usepackage{amssymb, amsmath, fullpage}%
+
+\pagestyle{empty}
+\lineskip +3pt
+
+\usepackage{tikz}
+
+\pgfdeclarelayer{edgelayer}
+\pgfdeclarelayer{nodelayer}
+\pgfsetlayers{edgelayer,nodelayer,main}
+
+\tikzstyle{none}=[inner sep=0pt]
+\definecolor{hexcolor0xf81e1c}{rgb}{0.973,0.118,0.110}
+\definecolor{hexcolor0x3c00ff}{rgb}{0.235,0.000,1.000}
+
+\tikzstyle{whitevertex}=[circle, ,fill=white,draw=black]
+\tikzstyle{setcirc}=[circle, ,fill=none,draw=black, scale=11]
+\tikzstyle{textbox}=[rectangle, fill=none, draw=none]
+
+\tikzstyle{undirected}=[draw=black]
+
+
+
+\begin{document}
+
+\begin{center}
+\textbf{{\Large 202201 Math 122 Assignment 5}}
+\end{center}
+
+\medskip\noindent\textbf{Due:  Friday, April 1, 2022 at 23:59}.  Please submit on your section's Crowdmark page.
+
+\bigskip\hrule\medskip\noindent There are five questions of equal value (worth a total of 45 marks).   There are 4 bonus marks available if the solutions are typeset with \LaTeX.  Information on obtaining and using \LaTeX\ is available on the cross-listed Brightspace page.
+
+\medskip\noindent
+Please feel free to discuss these problems with each other.  
+You may not  access  any ``tutoring'' or ``help'' website in any way. 
+In the end, each person must write up their own solution, in their own words, in a way that reflects their own understanding.   Complete solutions are those which are coherently written, and include appropriate justifications.
+
+
+\medskip\hrule
+
+
+\begin{enumerate}
+\item \begin{enumerate}
+\item For which bases $b$ is $(1331)_b$ the third power of an integer?
+\item Find the base $b$ if $(31)_b \times (14)_b = (464)_b$.
+\item Find a base $b$ in which $(56)_b$ and $(66)_b$ are squares of consecutive integers.
+\item Find $x$ if $(24x3)_5 = (x02x)_7$.
+\end{enumerate}
+
+\item{
+\begin{enumerate}
+\item{
+Prove that $6 \mid (n^3+5n)$ for every integer $n \geq 1$.
+}
+\item{Prove that for nonzero integers $a$ and $b$ and integer $c$ if $\gcd(a,b)=1$ and $a \mid c$ and $b \mid c$, then $ab \mid c$.
+
+}
+\end{enumerate}
+}
+
+
+\item Find the prime factorization of the smallest integer that is divisible by 24 and 42, and is simultaneously a fourth power and a sixth power.
+
+\item
+\begin{enumerate}
+\item Let $p$ be a prime number such that $p\mid n^3$. Prove that $p^3 \mid n^3$.
+\item Let $a$ be a positive integer. Find, with proof, all possibilities for $\gcd(a, 63)$.
+\item Let $d$ and $n$ be positive integers such that $d\mid n$ and $d \mid n+9$. Prove that $d = 1$ or $d = 3$ or $d = 9$.
+\end{enumerate}
+
+\item
+\begin{enumerate}
+\item Prove that if $a\equiv b$ (mod $12$) and $b\equiv c$ (mod $18$) then $a\equiv c$ (mod $3$).
+
+\item Find an integer $m > 1$ and an integer $x$ such that $x^2 \equiv 1$ (mod $m$), but $x \not\equiv 1$ (mod $m$) and $x \not\equiv -1$ (mod $m$).
+
+\item Find the last digit of $37^{37}$ in base 10. Then find the last digit of $37^{37}$ in base 7. Perform both calculations without explicitly computing $37^{37}$.  
+
+\end{enumerate}
+
+
+
+
+
+
+\end{enumerate}
+
+
+
+
+\end{document}

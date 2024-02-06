@@ -1,0 +1,219 @@
+\documentclass[11 pt]{article}%
+\usepackage{amssymb, amsmath, fullpage}%
+
+\pagestyle{empty}
+\lineskip +3pt
+
+\usepackage{tikz}
+
+\pgfdeclarelayer{edgelayer}
+\pgfdeclarelayer{nodelayer}
+\pgfsetlayers{edgelayer,nodelayer,main}
+
+\tikzstyle{none}=[inner sep=0pt]
+\definecolor{hexcolor0xf81e1c}{rgb}{0.973,0.118,0.110}
+\definecolor{hexcolor0x3c00ff}{rgb}{0.235,0.000,1.000}
+
+\tikzstyle{whitevertex}=[circle, ,fill=white,draw=black]
+\tikzstyle{setcirc}=[circle, ,fill=none,draw=black, scale=11]
+\tikzstyle{textbox}=[rectangle, fill=none, draw=none]
+
+\tikzstyle{undirected}=[draw=black]
+
+
+
+\begin{document}
+
+
+\textbf{{Math 122 Assignment 4 Solution Ideas}}
+
+
+
+\begin{enumerate}
+\item 
+
+ \begin{enumerate}
+\item 
+We are given that $a_3 = b_3 =1$ and that $a_4 = 2$ and $b_4 = 1$. 
+
+Let $n\geq 5$. Then $f_n = a_n f_2 + b_n f_1$ by definition. Since $n\geq 5$ we can use the Fibonacci recurrence to write
+
+\begin{eqnarray*}
+f_n & = & f_{n-1} + f_{n-2} \\
+ & = & (a_{n-1} f_2 + b_{n-1} f_1) + (a_{n-2} f_2 + b_{n-2} f_1) \\
+ & = & (a_{n-1} + a_{n-2}) f_2 + (b_{n-1} + b_{n-2}) f_1
+ \end{eqnarray*}
+ 
+Therefore, $a_n = a_{n-1} + a_{n-2}$ and $b_n = b_{n-1} + b_{n-2}$ for $n\geq 5$. 
+
+Our recursive definition then for $a_n$ is: $a_3 = 1$, $a_4 = 2$, and $a_n = a_{n-1} + a_{n-2}$, $n\geq 5$,
+and our recursive definiton for $b_n$ is: $b_3 = 1$, $b_4 = 1$, and $b_n = b_{n-1} + b_{n-2}$, $n\geq 5$.
+
+\bigskip
+
+We claim that $a_n = f_{n-1}$. We can see this since $a_3 = f_2 =1$ and $a_4 = f_3 = 2$ and $a_n$ follows the same recurrence definition as the Fibonacci numbers.
+
+By the same reasoning $b_n = f_{n-2}$ since $b_3 = f_1 = 1$, $b_4 = f_2 = 1$, and $b_n$ follows the same recurrence definition as the Fibonacci numbers.
+
+
+\item 
+We are given that $c_1 = c_2 = 0$. Now to calculate the value of $f_n$ we can apply the recurrence definition once to arrive at $f_n = f_{n-1} + f_{n-2}$. Now to determine $f_{n-1}$ we would need to apply the recurrence definition $c_{n-1}$ times, and to determine $f_{n-2}$ we would need to apply the recurrence defintion $c_{n-2}$ times. In total this gives that $c_n = c_{n-1} + c_{n-2} + 1$. 
+
+Thus, our recursive defintion is $c_1 = 0$, $c_2 = 0$, and $c_n = c_{n-1} + c_{n-2} + 1$, $n\geq 3$.  
+
+\item 
+\begin{eqnarray*}
+c_7 & = & c_6 + c_5 + 1 \\
+ & = & (c_5 + c_4 + 1) + c_5 + 1 \\
+ & = & 4 + 2 + 1 + 4 + 1 \\ 
+ & = & 12
+ \end{eqnarray*}
+ 
+\end{enumerate}
+
+\item
+\underline{Basis:} When $n=6$ we have $LHS = 5^6 = 15625$ and $RHS = 6^5= 7776$ so indeed $LHS > RHS$.
+
+\underline{Induction Hypothesis:} Suppose that $5^k > k^5$ for some integer $k\geq 6$. 
+
+\underline{Induction Step:} We want to show that $5^{k+1} > (k+1)^5$.
+\begin{center}
+$\begin{array}{cclr}
+LHS & = & 5^{k+1} & \\
+ & = & 5 \cdot 5^k &\\
+  & > & 5 \cdot k^5  &\mbox{(by the IH)} \\
+  & = & k^5 + k^5 + k^5 + k^5 + k^5 & \\
+  & = & k^5 + k\cdot k^4 + k^2\cdot k^3 + k^3 \cdot k^2 + k^4 \cdot k &\\
+  & > & k^5 + 5 k^4 + 5^2 \cdot k^3 + 5^3 \cdot k^2 + 5^4 \cdot k & (\mbox{since } k>5)\\
+  & = & k^5 + 5 k^4 + 25 k^3 +  125 k^2 + 625 k &\\
+  & = & k^5 + 5 k^4 + 25 k^3 +  125 k^2 + 624 k + k &\\
+  & > & k^5 + 5 k^4 + 10 k^3 + 10 k^2 + 5k + 1 & (\mbox{since } k>1) \\
+  & = & (k+1)^5 &\\
+  & = & RHS &
+  \end{array}$
+  \end{center}
+  
+\underline{Conclusion:} Therefore, by induction, we have that $5^n > n^5$ for all $n\geq 6$.
+
+Now, we can say that $n=6$ is the smallest possible value $n_0$ for which $5^n > n^5$ for all $n\geq n_0$ since for $n=5$ we have that $LHS = 5^5$ and $RHS = 5^5$ so we have that $LHS \not> RHS$.
+
+
+
+\item  
+\underline{Basis:} When $n=0$ we have $a_0 = 5(-2)^0 + (-3)^0 = 6$. When $n=1$ we have $a_1 = 5(-2)^1 + (-3)^1 = -13$. Therefore the statement is true when $n=0$ and $n=1$.
+
+\underline{Induction Hypothesis:} Suppose that there exists an integer $k\geq 1$ such that $a_n = 5(-2)^n + (-3)^n$ for all $n = 0, 1, \ldots, k$.
+
+\underline{Induction Step:} We want to show that $a_{k+1} = 5(-2)^{k+1} + (-3)^{k+1}$. Since $k\geq 1$ we know that $k+1\geq 2$, and we can therefore use the recursion to write
+\begin{center}
+$\begin{array}{cclr}
+a_{k+1} & = & (-5)a_k -6 a_{k-1} & \\
+ & = & (-5)[5(-2)^k + (-3)^k] - 6[5(-2)^{k-1} + (-3)^{k-1}] & \mbox{(by the IH)} \\
+ & = & -25(-2)^k - 5(-3)^k - 30(-2)^{k-1} - 6 (-3)^{k-1} & \\
+ & = & 50 (-2)^{k-1} + 15 (-3)^{k-1} -30(-2)^{k-1} - 6(-3)^{k-1} & \\
+ & = & 20 (-2)^{k-1} + 9 (-3)^{k-1} & \\
+ & = & 5 (-2)^2 (-2)^{k-1} + (-3)^2 (-3)^{k-1} & \\
+ & = & 5 (-2)^{k+1} + (-3)^{k+1} & \mbox{as wanted.}\\
+\end{array}$
+\end{center}
+
+\underline{Conclusion:} Therefore, by induction, $a_n = 5(-2)^n + (-3)^n$ for all integers $n\geq 0$.
+
+
+\item 
+\underline{Basis:} When $n=1$ we have $f_1^2 = (1)^2 = (1)(1) = f_1f_2$. 
+
+Therefore the statement is true when $n=1$.
+
+\underline{Induction Hypothesis:} Suppose that there exists an integer $k\geq 1$ such that $f_1^2 + f_2^2 + \cdots + f_k^2 = f_{k}f_{k+1}$.
+
+\underline{Induction Step:} We want to show that $f_1^2 + f_2^2 + \cdots + f_{k+1}^2 = f_{k+1}f_{k+2}$. 
+
+Now
+\begin{center}
+$\begin{array}{cclr}
+LHS & = & f_1^2 + f_2^2 + \cdots + f_{k+1}^2  & \\
+ & = & f_1^2 + f_2^2 + \cdots + f_k^2+ f_{k+1}^2  &  \\
+ & = & f_k f_{k+1} + f_{k+1}^2 & \mbox{(by the IH)}\\
+ & = & f_k f_{k+1} + f_{k+1} f_{k+1} & \\
+ & = & f_{k+1}(f_k + f_{k+1}) & \\
+ & = & f_{k+1} f_{k+2} & \mbox{(since $k\geq 1$, and so $k+2 \geq 3$)}
+\end{array}$
+\end{center}
+
+\underline{Conclusion:} Therefore, by induction, $f_1^2 + f_2^2 + \cdots + f_n^2 = f_{n}f_{n+1}$ for all integers $n\geq 1$.
+
+
+\item 
+$t_0 = b$ \\
+$t_1 = a t_0 + b = a\cdot b + b$ \\
+$t_2 = a t_1 + b = a(a\cdot b + b) + b = a^2\cdot b + a \cdot b + b$ \\
+$t_3 = a t_2 + b = a(a^2\cdot b + a \cdot b + b) + b = a^3 \cdot b+ a^2 \cdot b + a\cdot b + b$ \\ 
+$t_4 = a t_3 + b = a(a^3 \cdot b+ a^2 \cdot b + a\cdot b + b) + b = a^4\cdot b + a^3 \cdot b+ a^2 \cdot b + a\cdot b + b$ \\
+
+From this we can guess that when $a\neq 1$
+\begin{center}
+$\begin{array}{ccl}
+t_n & = & a^n \cdot b+ a^{n-1} \cdot b + \cdots + a^2 \cdot b + a\cdot b + b \\
+& = & b (a^n + a^{n-1} + \cdots + a^2 + a + 1) \\ 
+& = & b \left( \dfrac{a^{n+1} - 1}{a-1}\right)
+\end{array}$
+\end{center}
+
+When $a=1$ we would have
+\begin{center}
+$\begin{array}{ccl}
+t_n & = & a^n \cdot b+ a^{n-1} \cdot b + \cdots + a^2 \cdot b + a\cdot b + b \\
+ & = & b + b + \cdots + b + b + b \\
+ & = & (n+1)b
+ \end{array}$
+ \end{center}
+
+Now we prove that our guess of $t_n$ is correct. First consider the case when $a\neq 1$, so we have a guess of $t_n = b \left( \dfrac{a^{n+1} - 1}{a-1}\right)$.
+
+
+\underline{Basis:} When $n=0$ we have $t_0 = b\left( \dfrac{a^{1} - 1}{a-1}\right) = b$. Therefore the statement is true when $n=0$.
+
+\underline{Induction Hypothesis:} Suppose that there exists an integer $k\geq 0$ such that $t_k = b \left( \dfrac{a^{k+1} - 1}{a-1}\right)$.
+
+\underline{Induction Step:} We want to show that $t_{k+1} = b \left( \dfrac{a^{k+2} - 1}{a-1}\right)$. Since $k\geq 0$ we know that $k+1\geq 1$, and we can therefore use the recursion to write
+\begin{center}
+$\begin{array}{cclr}
+t_{k+1} & = & a\cdot t_k + b & \\
+ & = & a \cdot b \left( \dfrac{a^{k+1} - 1}{a-1}\right) + b & \mbox{(by the IH)} \\
+ & = & a \cdot b \left( \dfrac{a^{k+1} - 1}{a-1}\right) + b \left( \dfrac{a-1}{a-1}\right) & \\
+ & = & b \left( \dfrac{a^{k+2} - a}{a-1}\right) + b \left( \dfrac{a-1}{a-1}\right) & \\
+ & = & b \left( \dfrac{a^{k+2} - a + a -1}{a-1}\right) & \\
+ & = & b \left( \dfrac{a^{k+2} -1}{a-1}\right) & \mbox{as wanted}.\\
+
+\end{array}$
+\end{center}
+
+\underline{Conclusion:} Therefore, by induction, $t_n = b \left( \dfrac{a^{n+1} - 1}{a-1}\right)$ for all integers $n\geq 0$ when $a\neq 1$.
+
+
+Now we consider the case when $a=1$ so our guess is $t_n = (n+1)b$. In this case, note that the recursive definition becomes $t_n= a t_{n-1} + b = t_{n-1} + b$.
+
+\underline{Basis:} When $n=0$ we have $t_0 = (0+1)b = b$. Therefore the statement is true when $n=0$.
+
+\underline{Induction Hypothesis:} Suppose that there exists an integer $k\geq 0$ such that $t_k = (k+1)b$.
+
+\underline{Induction Step:} We want to show that $t_{k+1} = (k+2)b$. Since $k\geq 0$ we know that $k+1\geq 1$, and we can therefore use the recursion to write
+\begin{center}
+$\begin{array}{cclr}
+t_{k+1} & = & t_k + b & \\
+ & = & (k+1)b+ b & \mbox{(by the IH)} \\
+ & = & (k+2)b &  \mbox{as wanted}.\\
+
+\end{array}$
+\end{center}
+
+\underline{Conclusion:} Therefore, by induction, $t_n = (n+1)b$ for all integers $n\geq 0$ when $a= 1$.
+
+
+\end{enumerate}
+
+
+
+
+\end{document}
