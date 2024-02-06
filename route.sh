@@ -1,7 +1,6 @@
 #!/bin/bash
-# git workflow v7.0
+# git workflow v8.0
 # 2022-2023 @arfazhxss
-# Modified for UVic Rocketry 
 
 breakStrSize=50
 breakStrIter=$(printf '_%.0s' $(seq 1 "$breakStrSize"))
@@ -37,10 +36,14 @@ function pushChanges() {
 
   git add . && git add -u && \
   git commit -m $"$CommitMessage"$'\nCommit by @arfazhxss on '"$(date +'%a %d %b %Y')" && \
-  git push --set-upstream origin "$branch"
-  rm -Rf .DS_Store/
-  echo -e "${breakStrIter}\n\t\tYour changes have been pushed\n\t\tto the repository :)\n${breakStrIter}"
+  if git push --set-upstream origin "$branch"; then
+    rm -Rf .DS_Store/
+    echo -e "${breakStrIter}\n\t\tYour changes have been pushed\n\t\tto the repository :)\n${breakStrIter}"
+  else
+    echo -e "${breakStrIter}\n\t\tError: Failed to push changes to the repository\n${breakStrIter}"
+  fi
 }
+
 
 
 function gitWorkflow() {
