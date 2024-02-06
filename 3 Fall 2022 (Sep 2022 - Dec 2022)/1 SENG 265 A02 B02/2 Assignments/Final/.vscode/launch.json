@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/arfazhussain/Library/CloudStorage/OneDrive-UniversityofVictoria/0 UVIC/4 Second Year Engineering/3 SENG 265 A02 B02/2 Assignments/Final",
+      "program": "/Users/arfazhussain/Library/CloudStorage/OneDrive-UniversityofVictoria/0 UVIC/4 Second Year Engineering/3 SENG 265 A02 B02/2 Assignments/Final/build/Debug/outDebug"
+    }
+  ]
+}

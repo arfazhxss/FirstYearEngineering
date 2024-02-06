@@ -1,0 +1,3 @@
+alias ps="echo && echo '------------------ LISTING ALL DIRECTORIES ------------------' && pwd && echo '--------------------- LISTING ALL FILES ---------------------' && ls -al && echo '------------------------- XXXXXXXXXX -------------------------' && echo"
+
+
